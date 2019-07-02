@@ -1,4 +1,4 @@
-# mimimailer
+# mimemailer
 
 [![Build Status](https://travis-ci.org/adueck/mimemailer.svg)](https://travis-ci.org/adueck/mimemailer)
 [![Go Report Card](https://goreportcard.com/badge/github.com/adueck/mimemailer)](https://goreportcard.com/report/github.com/adueck/mimemailer)
