@@ -2,13 +2,13 @@
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
 
-// Package mimemailer provides a way to easily create send multi-part 
-// MIME email messages as specified by RFC 2045 and RFC 2046. 
+// Package mimemailer provides a way to easily create send multi-part
+// MIME email messages as specified by RFC 2045 and RFC 2046.
 //
-// This package takes an email with a regular HTML body, converts it 
-// into a multipart MIME message as per RFC 2045 and RFC 2046, and 
+// This package takes an email with a regular HTML body, converts it
+// into a multipart MIME message as per RFC 2045 and RFC 2046, and
 // sends it via SMTP.
-// 
+//
 // Given an email like this:
 //
 // 	Email{
@@ -33,20 +33,20 @@
 // 	Date: Tue, 10 Nov 2009 23:00:00 +0000
 // 	MIME-Version: 1.0
 // 	Content-Type: multipart/alternative; boundary=boundary42
-//	
+//
 // 	--boundary42
 // 	Content-Type: text/plain; charset=utf-8
 // 	Content-Transfer-Encoding: quoted-printable
-//	
-//	
+//
+//
 // 	Hello =F0=9F=8C=8D. This email w=C3=ADll be formatted as a MIME message as =
 // 	per RFC 2045 and RFC 2046 =F0=9F=93=A7
-//	
+//
 // 	--boundary42
 // 	Content-Type: text/html; charset=utf-8
 // 	Content-Transfer-Encoding: quoted-printable
-//	
-//	
+//
+//
 // 	<!doctype html>
 // 	<html xmlns=3Dhttp://www.w3.org/1999/xhtml style=3Dbackground:#f3f3f3>
 // 	<body>
@@ -54,22 +54,22 @@
 // 	as per RFC 2045 and RFC 2046 =F0=9F=93=A7</p>
 // 	</body>
 // 	</html>
-//	
+//
 //	--boundary42--
 //
-// The text version is generated automatically, and the message is converted 
-// into quoted printable format with CRLF line endings.  
+// The text version is generated automatically, and the message is converted
+// into quoted printable format with CRLF line endings.
 //
 // After connecting to a SMTP server, you can send multiple messages and re-use
-// the same connection.  
-// 
-// Example Usage:  
+// the same connection.
+//
+// Example Usage:
 //
 //	import (
 //		"log"
 //		"github.com/adueck/mimemailer"
 //	)
-// 
+//
 // 	func main() {
 //		// Step 1 - Create a new mailer instance with config for SMTP
 // 		m, err := mimemailer.NewMailer(Config{
@@ -87,10 +87,10 @@
 //		// Step 2 - Connect to SMTP Server
 //		err = m.Connect()
 //		if err != nil {
-//			log.Fatal(err)	
+//			log.Fatal(err)
 //		}
 //
-//		// Step 3 - Send message(s) 
+//		// Step 3 - Send message(s)
 //		err = m.SendEmail(mimemailer.Email{
 //			ToAddress: 	"recipient@example.com",
 //			ToName:		"Bob Smith",

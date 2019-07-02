@@ -1,12 +1,12 @@
 package mimemailer
 
 import (
-	"testing"
 	"bytes"
+	"testing"
 )
 
 var (
-	qpInput string
+	qpInput    string
 	qpExpected string
 )
 

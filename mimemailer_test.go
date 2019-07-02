@@ -1,15 +1,15 @@
 package mimemailer
 
 import (
-	"testing"
-	"time"
-	"net/mail"
 	"bytes"
 	"github.com/kylelemons/godebug/diff"
+	"net/mail"
+	"testing"
+	"time"
 )
 
 var (
-	emailHTML string
+	emailHTML     string
 	expectedEmail []byte
 )
 
@@ -73,10 +73,10 @@ func TestIsConnected(t *testing.T) {
 func TestMakeEmail(t *testing.T) {
 	e := Email{
 		ToAddress: "test@example.com",
-		ToName: "Test Recipient",
-		Subject: "Test Email",
-		HTML: emailHTML,
-		Date: time.Date(2009, time.November, 10, 23, 0, 0, 0, time.UTC),
+		ToName:    "Test Recipient",
+		Subject:   "Test Email",
+		HTML:      emailHTML,
+		Date:      time.Date(2009, time.November, 10, 23, 0, 0, 0, time.UTC),
 	}
 	a := mail.Address{Name: "Sender Name", Address: "sender@example.com"}
 	made, err := e.make(a)
