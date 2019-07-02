@@ -1,5 +1,8 @@
 # mimimailer
 
+[![Build Status](https://travis-ci.org/adueck/mimemailer.svg)](https://travis-ci.org/adueck/mimemailer)
+[![GoDoc](https://godoc.org/github.com/adueck/mimemailer?status.svg)](https://godoc.org/github.com/adueck/mimemailer)
+
 > Easily create and send MIME emails in Go
 
 Mimemailer provides a way to easily create send multi-part MIME email messages as specified by RFC 2045 and RFC 2046. It is inspired by [nodemailer](https://nodemailer.com/about/) but it much more limited and minimal.
@@ -120,3 +123,9 @@ func main() {
 	}
 }
 ```
+
+## Documentation
+
+[https://godoc.org/github.com/adueck/mimemailer](https://godoc.org/github.com/adueck/mimemailer)
+
+
