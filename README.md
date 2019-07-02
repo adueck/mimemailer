@@ -1,6 +1,7 @@
 # mimimailer
 
 [![Build Status](https://travis-ci.org/adueck/mimemailer.svg)](https://travis-ci.org/adueck/mimemailer)
+[![Go Report Card](https://goreportcard.com/badge/github.com/adueck/mimemailer)](https://goreportcard.com/report/github.com/adueck/mimemailer)
 [![GoDoc](https://godoc.org/github.com/adueck/mimemailer?status.svg)](https://godoc.org/github.com/adueck/mimemailer)
 
 > Easily create and send MIME emails in Go
