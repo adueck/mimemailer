@@ -140,7 +140,7 @@ func (m *Mailer) Disconnect() error {
 
 // SendEmail sends a single email. Note that the client must first be connected to the SMTP server.
 func (m *Mailer) SendEmail(email Email) error {
-	// Get from Adderss from config
+	// Get from Address from config
 	fromAddress := mail.Address{Name: m.Config.SenderName, Address: m.Config.SenderAddress}
 	// Create the headers and body
 	message, err := email.make(fromAddress)
