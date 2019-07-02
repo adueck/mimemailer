@@ -94,7 +94,7 @@ func (m *Mailer) Connect() error {
 	if m.connected {
 		return errors.New("mimemailer: smtp client is already connected")
 	}
-	// NOTE: This only works if the app has one SMTP connection at a time!
+
 	auth := smtp.PlainAuth(
 		"",
 		m.Config.Username,
