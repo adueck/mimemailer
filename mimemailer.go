@@ -16,7 +16,7 @@ import (
 	"jaytaylor.com/html2text"
 )
 
-// Config holds the SMTP connection and sending configuration infos
+// Config holds the SMTP connection and sending configuration info.
 type Config struct {
 	Host          string // SMTP Mail Server Name
 	Port          string // Port to connect to SMTP Server
@@ -26,7 +26,7 @@ type Config struct {
 	SenderAddress string // Email that will appear in the From: of email
 }
 
-// Email carries the content and information needed to send a single email
+// Email carries the content and information needed to send a single email.
 type Email struct {
 	ToAddress       string
 	ToName          string
@@ -36,7 +36,7 @@ type Email struct {
 	ListUnsubscribe string // Optional value for List-Unsubscribe header. ie. "<mailto:unsubscribe@example.com?subject=unsubscribe-request>"
 }
 
-// For use in the text template in making the email
+// For use in the text template in making the email.
 type emailInfoForTemplate struct {
 	From            string
 	To              string
@@ -47,7 +47,7 @@ type emailInfoForTemplate struct {
 	Date            string
 }
 
-// Mailer implements a connection for sending SMTP emails
+// Mailer implements a connection for sending SMTP emails.
 type Mailer struct {
 	Config    Config
 	connected bool
@@ -55,7 +55,7 @@ type Mailer struct {
 }
 
 var (
-	// tmpl is used to create the email with headers etc for sending via smtp
+	// tmpl is used to create the email with headers etc for sending via SMTP
 	tmpl *template.Template
 	// Connected is a state holder to see if the client is connected or non
 	connected = false
@@ -81,7 +81,7 @@ func init() {
 	}
 }
 
-// IsConnected checks if the mailer is connected to an SMTP server
+// IsConnected checks if the mailer is connected to an SMTP server.
 func (m *Mailer) IsConnected() bool {
 	if m.connected {
 		return true
@@ -89,7 +89,7 @@ func (m *Mailer) IsConnected() bool {
 	return false
 }
 
-// Connect connects to SMTP Mail server
+// Connect connects to SMTP Mail server.
 func (m *Mailer) Connect() error {
 	if m.connected {
 		return errors.New("mimemailer: smtp client is already connected")
@@ -128,7 +128,7 @@ func (m *Mailer) Connect() error {
 	return nil
 }
 
-// Disconnect disconnects from SMTP server
+// Disconnect disconnects from SMTP server.
 func (m *Mailer) Disconnect() error {
 	err := m.client.Quit()
 	if err != nil {
@@ -202,7 +202,7 @@ func (m *Mailer) SendEmail(email Email) error {
 	return nil
 }
 
-// make() will return an RFC 2045 compliant version of email and headers ready for sending
+// make() will return an RFC 2045 compliant version of email and headers ready for sending.
 func (email Email) make(fromAddress mail.Address) ([]byte, error) {
 	// Make a text version of the HTML email body
 	text, err := html2text.FromString(email.HTML, html2text.Options{PrettyTables: false})

@@ -21,7 +21,7 @@ func convertToQuotedPrintable(text string) (string, error) {
 	return converted, nil
 }
 
-// Takes a byte array with mixed line endings and outputs one with all CRLF endigns
+// takes a byte array with mixed line endings and outputs one with all CRLF endigns
 func makeAllCRLF(d []byte) []byte {
 	// replace CR LF \r\n (windows) with LF \n (unix)
 	d = bytes.Replace(d, []byte{13, 10}, []byte{10}, -1)
