@@ -72,7 +72,7 @@
 //
 // 	func main() {
 //		// Step 1 - Create a new mailer instance with config for SMTP
-// 		m, err := mimemailer.NewMailer(Config{
+// 		m, err := mimemailer.NewMailer(mimemailer.Config{
 //			Host: 			"smtp.example.com",
 //			Port: 			"576",
 //			Username: 		"myusername",
